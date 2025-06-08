@@ -1,0 +1,36 @@
+openapi: 3.0.1
+info:
+  title: Google CSE Plugin
+  version: "1.0.0"
+servers:
+  - url: https://www.googleapis.com/customsearch/v1
+paths:
+  /:
+    get:
+      summary: Buscar en Google Custom Search
+      parameters:
+        - in: query
+          name: key
+          required: true
+          schema:
+            type: string
+          description: Tu API Key (por ejemplo: AIzaSy…)
+        - in: query
+          name: cx
+          required: true
+          schema:
+            type: string
+          description: Tu Search Engine ID (CX)
+        - in: query
+          name: q
+          required: true
+          schema:
+            type: string
+          description: El texto que quieras buscar
+      responses:
+        "200":
+          description: Resultados de búsqueda
+          content:
+            application/json:
+              schema:
+                type: object
