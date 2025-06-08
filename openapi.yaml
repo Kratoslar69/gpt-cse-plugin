@@ -1,4 +1,4 @@
-openapi: 3.1.0   # ← cambia aquí la versión
+openapi: 3.1.0
 info:
   title: Google CSE Plugin
   version: "1.0.0"
@@ -32,6 +32,7 @@ paths:
             application/json:
               schema:
                 type: object
+                additionalProperties: true
 
 components:
   securitySchemes:
