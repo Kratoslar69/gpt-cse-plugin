@@ -4,9 +4,11 @@ info:
   version: "1.0.0"
 servers:
   - url: https://www.googleapis.com/customsearch/v1
+
 paths:
   /:
     get:
+      operationId: search
       summary: Buscar en Google Custom Search
       security:
         - ApiKeyAuth: []
@@ -30,9 +32,11 @@ paths:
             application/json:
               schema:
                 type: object
+
 components:
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
       in: query
       name: key
+  schemas: {}
