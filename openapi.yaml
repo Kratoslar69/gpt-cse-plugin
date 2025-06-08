@@ -8,13 +8,9 @@ paths:
   /:
     get:
       summary: Buscar en Google Custom Search
+      security:
+        - ApiKeyAuth: []
       parameters:
-        - in: query
-          name: key
-          required: true
-          schema:
-            type: string
-          description: Tu API Key (por ejemplo: AIzaSy…)
         - in: query
           name: cx
           required: true
@@ -34,3 +30,9 @@ paths:
             application/json:
               schema:
                 type: object
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: key
