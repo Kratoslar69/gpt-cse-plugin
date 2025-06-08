@@ -32,7 +32,8 @@ paths:
             application/json:
               schema:
                 type: object
-                additionalProperties: true
+                properties: {}             # <-- aquí
+                additionalProperties: true # <-- y aquí
 
 components:
   securitySchemes:
